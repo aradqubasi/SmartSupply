@@ -35,5 +35,20 @@ angular.module('smartSupply.Model').factory('User',[function(){
     return User;
 }]);
 angular.module('smartSupply.Model').service('userManager',['$http', '$q', 'User', function ($http, $q, User) {
+    var userManager = {
+        _pool: {},
+        _get: function (userId, userData) {
+            var tmpUser = this._pool[userId];
+            if (tmpUser) {
+                //set
+            }
+            else {
+                tmpUser = new User(userData);
+                this._pool[userId] = tmpUser;
+            }
+            return tmpUser;
+        }
+
+    }
 
 }]);
