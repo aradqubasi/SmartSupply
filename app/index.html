@@ -5,17 +5,26 @@
   <title>My AngularJS App</title>
   <meta name="description" content="">
 </head>
-<body ng-app="smartSupply">
+<body ng-app="smartSupply.routing">
   <ul>
     <li><a href="#!/login">login</a></li>
     <li><a href="#!/system-status">system status</a></li>
     <li><a href="#!/user-management">user management</a></li>
   </ul>
+
   <div ng-view></div>
 
 
   <script src="bower_components/angular/angular.js"></script>
   <script src="bower_components/angular-route/angular-route.js"></script>
   <script src="routing.js"></script>
+
+  <script src="view/view.module.js"></script>
+  <script src="view/login/login.controller.js"></script>
+  <script src="view/user-management/user-management.controller.js"></script>
+
+  <script src="model/model.js"></script>
+  <script src="model/user.js"></script>
+
 </body>
 </html>

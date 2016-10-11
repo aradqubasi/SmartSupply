@@ -1,0 +1,23 @@
+[
+  {
+    "name": "Barbara Kan",
+    "email": "barbara.kan@triumph.com",
+    "position": "User",
+    "isLocked": true,
+    "officePhone": "0000000001"
+  },
+  {
+    "name": "Cecile Staehler-Schneid",
+    "email": "Cecile.Staehler-Schneid@triumph.com",
+    "position": "Supervisor",
+    "isLocked": false,
+    "officePhone": "0000000001"
+  },
+  {
+    "name": "Ben Vermin",
+    "email": "ben.vermin@chainbalance.com",
+    "position": "Administrator",
+    "isLocked": false,
+    "officePhone": "0000000001"
+  }
+]
