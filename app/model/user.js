@@ -11,8 +11,14 @@ angular.module('smartSupply.model').factory('User',[function(){
         setUserId: function (userId) {
             this.userId = userId;
         },
+        getUserId: function () {
+            return this.userId;
+        },
         setUserName: function (userName) {
             this.userName = userName;
+        },
+        getUserName: function () {
+            return this.userName;
         },
         setEmail: function (userEmail) {
             this.userEmail = userEmail;
@@ -27,12 +33,13 @@ angular.module('smartSupply.model').factory('User',[function(){
             this.officePhoneNumber = officePhoneNumber;
         },
         setData: function (userData) {
-            this.setUserId(userData.userId);
-            this.setUserName(userData.userName);
-            this.setEmail(userData.userEmail);
-            this.setPosition(userData.position);
-            this.setIsLocked(userData.isLocked);
-            this.setOfficePhoneNumber(userData.officePhoneNumber);
+            angular.extend(this, userData);
+            //this.setUserId(userData.userId);
+            //this.setUserName(userData.userName);
+            //this.setEmail(userData.userEmail);
+            //this.setPosition(userData.position);
+            //this.setIsLocked(userData.isLocked);
+            //this.setOfficePhoneNumber(userData.officePhoneNumber);
         }
     };
     return User;

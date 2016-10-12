@@ -1,1 +1,6 @@
-<span ng-controller="user-management.controller as ctrl">{{ctrl.reportName}}</span>
+<div ng-controller="user-management.controller as ctrl">
+    <span>{{ctrl.reportName}}</span>
+    <ul ng-repeat=" user in ctrl.users">
+        <li>{{user.getUserName()}}</li>
+    </ul>
+</div>
