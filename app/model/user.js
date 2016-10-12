@@ -44,13 +44,14 @@ angular.module('smartSupply.model').factory('User',[function(){
     };
     return User;
 }]);
-angular.module('smartSupply.model').service('userManager',['$http', '$q', 'User', function ($http, $q, User) {
+angular.module('smartSupply.model').service('userManager',['$http', '$q', 'User', '$log', function ($http, $q, User, $log) {
     var userManager = {
         _pool: {},
         _get: function (userId, userData) {
             var tmpUser = this._pool[userId];
             if (tmpUser) {
                 //set
+                var i = 1;
             }
             else {
                 tmpUser = new User(userData);
@@ -84,6 +85,23 @@ angular.module('smartSupply.model').service('userManager',['$http', '$q', 'User'
             return deferred.promise;
         },
         getAllUsers: function () {
+            /*
+            var users = [];
+            var scope = this;
+            $http.get('Mock/users.json')
+                .success(function (usersArray) {
+                    usersArray.forEach(function (userData) {
+                            var user = scope._get(userData.userId, userData);
+                            users.push(user);
+                        });
+                    $log.info("getAllUsers success hit");
+
+                })
+                .error(function () {
+                    $log.error("getAllUsers error hit");
+                });
+            return users;
+            */
             var deferred = $q.defer();
             var scope = this;
             $http.get('Mock/users.json')//$http.get('url')
