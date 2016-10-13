@@ -3,7 +3,8 @@
 // Declare app level module which depends on view, and components
 angular.module('smartSupply.routing', [
   'ngRoute',
-  'smartSupply.view'
+  'smartSupply.view',
+  'smartSupply.userList'
 ]).
 config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
   $locationProvider.hashPrefix('!');
