@@ -91,19 +91,27 @@ describe('user-list', function () {
             $componentController = _$componentController_;
             $compile = _$compile_;
             $rootScope = _$rootScope_;
+
             elm = angular.element(
                 '<div>' +
-                    '<user-list userslist="users" on-select="onSelect"></user-list>' +
+                    '<user-list users-list="users" on-select="onSelect"></user-list>' +
                 '</div>'
             );
+
+            //elm = angular.element('<div><ul><li>e1</li><li>e2</li><li>e3</li></ul></div>');
+            console.log(elm);
             $compile(elm)($rootScope);
+            console.log(elm);
             $rootScope.$digest();
+            console.log(elm);
         }));
 
         it('should show the list of users', function () {
-            var usersRecords = elm.find('md-list md-list-item span');
+            console.log(elm);
+            var usersRecords = elm.find('div > ul');
+            console.log(usersRecords);
             expect(usersRecords).toBeDefined();
-            expect(usersRecords.length()).toBe(users.length);
+            expect(usersRecords.length).toBe(users.length);
         });
     });
 });
