@@ -1,11 +1,11 @@
-<div layout="column">
+<div>
     <span>User list:</span>
-    <md-list>
-        <md-list-item ng-repeat="user in $ctrl.users" ng-click="$ctrl.onSelect(user)">
+    <ul>
+        <li ng-repeat="user in $ctrl.users" ng-click="$ctrl.onSelect(user)">
             <span>{{ user.name }}</span>
             <span>{{ user.email }}</span>
             <span>{{ user.position }}</span>
             <span>{{ user.isLocked }}</span>
-        </md-list-item>
-    </md-list>
+        </li>
+    </ul>
 </div>

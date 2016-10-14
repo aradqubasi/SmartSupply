@@ -85,7 +85,7 @@ describe('user-list', function () {
             selectedUser = user;
         };
 
-        beforeEach(module('templates'));
+        beforeEach(module('components/user-list/user-list.template.html'));
         
         beforeEach(inject(function (_$componentController_, _$compile_, _$rootScope_) {
             $componentController = _$componentController_;
