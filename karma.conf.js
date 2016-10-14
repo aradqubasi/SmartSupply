@@ -13,14 +13,26 @@ module.exports = function(config) {
       'components/**/*.component.js',
       'view*/**/*.module.js',
       'view*/**/*.controller.js',
-      'components/user-list/*spec.js'
+      'components/**/*template.html',
+      'components/**/*spec.js'
+      //'components/user-list/user-list.template.html',
     ],
+
+    preprocessors: {
+      'components/**/*template.html': ['ng-html2js']
+    },
+
+    ngHtml2JsPreprocessor: {
+      moduleName: 'templates'
+    },
 
     autoWatch: true,
 
     frameworks: ['jasmine'],
 
     browsers: ['Chrome'],
+
+    port: 9877,
 
     plugins: [
       'karma-chrome-launcher',

@@ -1,7 +1,7 @@
 <div layout="column">
     <span>User list:</span>
     <md-list>
-        <md-list-item ng-repeat="user in $ctrl.users" ng-click="$ctrl.onSelect(user.userId)">
+        <md-list-item ng-repeat="user in $ctrl.users" ng-click="$ctrl.onSelect(user)">
             <span>{{ user.name }}</span>
             <span>{{ user.email }}</span>
             <span>{{ user.position }}</span>
