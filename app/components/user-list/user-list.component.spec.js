@@ -103,7 +103,7 @@ describe('user-list', function () {
         it('should show the list of users', function () {
             var usersRecords = elm.find('md-list md-list-item span');
             expect(usersRecords).toBeDefined();
-            expect(usersRecords.length()).toBe(users.length);
+            expect(usersRecords.length).toBe(users.length);
         });
     });
 });
