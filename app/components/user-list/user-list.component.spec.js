@@ -42,7 +42,7 @@ describe('user-list', function () {
         }));
         it('should get bindings correctly',function () {
             var bindings = { usersList: users, onSelect: onSelect };
-            var ctrl = $componentController('user-list',null, bindings);
+            var ctrl = $componentController('userList',null, bindings);
             expect(ctrl.usersList).toBeDefined();
             expect(ctrl.usersList).toBe(users);
             expect(ctrl.onSelect).toBeDefined();
@@ -91,17 +91,26 @@ describe('user-list', function () {
             $componentController = _$componentController_;
             $compile = _$compile_;
             $rootScope = _$rootScope_;
+            $rootScope.users = users;
+            $rootScope.onSelect = onSelect;
             elm = angular.element(
-                '<div>' +
-                    '<user-list userslist="users" on-select="onSelect"></user-list>' +
-                '</div>'
+
+                '<div><userlist userslist="users" onselect="onSelect"></userlist></div>'
+
+                //'<ul><li>{{users}}</li><li>2</li><li>3</li></ul>'
             );
+
+            //elm = angular.element('<ul><li>1</li><li>2</li><li>3</li></ul>');
             $compile(elm)($rootScope);
+            //elm = $compile('<ul><li>1</li><li>2</li><li>3</li></ul>')($rootScope);
             $rootScope.$digest();
         }));
 
         it('should show the list of users', function () {
-            var usersRecords = elm.find('md-list md-list-item span');
+            console.log(elm);
+            var usersRecords = elm.find('li');
+            console.log(elm.html());
+            console.log(usersRecords);
             expect(usersRecords).toBeDefined();
             expect(usersRecords.length).toBe(users.length);
         });
