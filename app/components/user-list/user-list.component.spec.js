@@ -95,7 +95,7 @@ describe('user-list', function () {
             $rootScope.onSelect = onSelect;
             elm = angular.element(
 
-                '<div><userlist userslist="users" onselect="onSelect"></userlist></div>'
+                "<div><user-list users-list='users' on-select='onSelect'></user-list></div>"
 
                 //'<ul><li>{{users}}</li><li>2</li><li>3</li></ul>'
             );
@@ -116,3 +116,4 @@ describe('user-list', function () {
         });
     });
 });
+
