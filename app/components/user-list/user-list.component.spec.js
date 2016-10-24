@@ -85,8 +85,8 @@ describe('user-list', function () {
             selectedUser = user;
         };
 
-        beforeEach(module('components/user-list/user-list.template.html'));
-        
+        //beforeEach(module('components/user-list/user-list.template.html'));
+        beforeEach(module('smartSupply.templates'));
         beforeEach(inject(function (_$componentController_, _$compile_, _$rootScope_) {
             $componentController = _$componentController_;
             $compile = _$compile_;
@@ -107,10 +107,10 @@ describe('user-list', function () {
         }));
 
         it('should show the list of users', function () {
-            console.log(elm);
+            //console.log(elm);
             var usersRecords = elm.find('li');
-            console.log(elm.html());
-            console.log(usersRecords);
+            //console.log(elm.html());
+            //console.log(usersRecords);
             expect(usersRecords).toBeDefined();
             expect(usersRecords.length).toBe(users.length);
         });
