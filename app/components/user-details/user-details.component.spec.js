@@ -58,7 +58,7 @@ describe('user-details', function () {
             $rootScope.userToDisplay = userToDisplay;
             $rootScope.createUser = createUser;
             $rootScope.updateUser = updateUser;
-            elm = angular.element('<user-details user="userToDisplay" on-create="createUser" on-update="updateUser"></user-details>');
+            elm = angular.element('<div><user-details user="userToDisplay" on-create="createUser" on-update="updateUser"></user-details></div>');
             $compile(elm)($rootScope);
             $rootScope.$digest();
             //var bindings = {user: userToDisplay, onCreate: createUser(), onUpdate: updateUser};
@@ -66,8 +66,15 @@ describe('user-details', function () {
         }));
 
         it('first tab was displayed', function () {
-            console.log(elm.find('input').eq(0).text());
+            //console.log(elm);
+            console.log(elm.find('input').eq(0));
+            //elm.find('input').eq(0).val('New name').triggerHandler('input');
+            //elm.find('md-button');
+            console.log(elm.find('button').eq(0));
+            elm.find('button').eq(0).click();
+            elm.find('button').eq(0).triggerHandler('click');
             //expect(elm.find('input')).toBe();
+            //console.log(elm);
         });
     });
     });
