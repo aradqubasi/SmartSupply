@@ -8,10 +8,13 @@ angular.module('smartSupply.view')
         this.reportName = 'User Management';
         this.users = [];
         var scope = this;
+        var selectCall = function (user) {
+          console.log('hit');
+        };
         var promiseObj = userManager.getAllUsers();
         promiseObj.then(function (value) {
             scope.users = value;
-        })
+        });
         //var u1 = new User({"userId":"1","userName":"BarbaraKan","userEmail":"barbara.kan@triumph.com","position":"User","isLocked":true,"officePhone":"0000000001"});
         //var u2 = new User({"userId":"2","userName":"CecileStaehler-Schneid","userEmail":"Cecile.Staehler-Schneid@triumph.com","position":"Supervisor","isLocked":false,"officePhone":"0000000001"});
         //var u3 = new User({"userId":"3","userName":"BenVermin","userEmail":"ben.vermin@chainbalance.com","position":"Administrator","isLocked":false,"officePhone":"0000000001"});

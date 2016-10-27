@@ -3,7 +3,7 @@
  */
 'use strict';
 angular.module('smartSupply.userDetails',[
-    //'ngAnimate',
-    //'ngMaterial',
-    //'ngAria'
+    'ngAnimate',
+    'ngMaterial',
+    'ngAria'
 ]);

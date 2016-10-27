@@ -4,5 +4,6 @@
 'use strict';
 angular.module('smartSupply.view',[
     'smartSupply.model',
-    'smartSupply.routing'
+    'smartSupply.routing',
+    'smartSupply.userList'
 ]);

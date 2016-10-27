@@ -3,4 +3,5 @@
     <ul ng-repeat=" user in ctrl.users">
         <li>{{user.getUserName()}}</li>
     </ul>
+    <user-list users-list='ctrl.users' on-select='ctrl.selectCall'></user-list>
 </div>

@@ -71,7 +71,7 @@ describe('user-details', function () {
             //elm.find('input').eq(0).val('New name').triggerHandler('input');
             //elm.find('md-button');
             console.log(elm.find('button').eq(0));
-            elm.find('button').eq(0).click();
+            //elm.find('button').eq(0).click();
             elm.find('button').eq(0).triggerHandler('click');
             //expect(elm.find('input')).toBe();
             //console.log(elm);
