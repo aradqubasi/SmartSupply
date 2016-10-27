@@ -3,7 +3,11 @@
  */
 'use strict';
 angular.module('smartSupply.view',[
+    'ngAnimate',
+    'ngMaterial',
+    'ngAria',
     'smartSupply.model',
     'smartSupply.routing',
-    'smartSupply.userList'
+    'smartSupply.userList',
+    'smartSupply.userDetails'
 ]);

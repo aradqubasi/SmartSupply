@@ -85,18 +85,19 @@ angular.module('smartSupply.model').service('userManager',['$http', '$q', 'User'
             return deferred.promise;
         },
         getAllUsers: function () {
-            var scope = this;
-            var users = [];
-            return $http.get('Mock/users.json')
+            var scope = this, users = [], deferred = $q.defer();
+            $http.get('Mock/users.json')
                 .success(function (usersArray) {
                     usersArray.forEach(function (userData) {
                         var user = scope._get(userData.userId, userData);
                         users.push(user);
                     });
+                    deferred.resolve(users);
                 })
                 .error(function () {
                     deferred.reject();
                 });
+            return deferred.promise;
         },
         setUser: function (userData) {
             var scope = this;

@@ -1,7 +1,12 @@
 <div ng-controller="user-management.controller as ctrl">
     <span>{{ctrl.reportName}}</span>
     <ul ng-repeat=" user in ctrl.users">
-        <li>{{user.getUserName()}}</li>
+        <li>{{user.userName}}</li>
     </ul>
     <user-list users-list='ctrl.users' on-select='ctrl.selectCall'></user-list>
+    <md-content>
+        <div flex>
+            <user-details user="selectedUser" on-create="createUser" on-update="updateUser"></user-details>
+        </div>
+    </md-content>
 </div>

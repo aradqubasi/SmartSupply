@@ -16,7 +16,7 @@
             <label>Office phone</label>
             <input ng-model="$ctrl.user.officePhone">
         </md-input-container>
-        <md-button class="md-raised md-primary" ng-click="$ctrl.onUpdate($ctrl.user)">Save</md-button>
+        <md-button class="md-raised md-primary" ng-click="$ctrl.update($ctrl.user)">Save</md-button>
     </md-tab>
     <md-tab label="PASSWORD">
         <md-input-container class="md-block">
@@ -31,9 +31,9 @@
             <label>Confirm new password</label>
             <input ng-model="$ctrl.newPasswordConfirmed">
         </md-input-container>
-        <md-button class="md-raised md-primary" ng-click="$ctrl.onUpdate($ctrl.user)">Change</md-button>
+        <md-button class="md-raised md-primary" ng-click="$ctrl.update($ctrl.user)">Change</md-button>
     </md-tab>
     <md-tab label="PERMITION">
-        <md-button class="md-raised md-primary" ng-click="$ctrl.onUpdate($ctrl.user)">Save</md-button>
+        <md-button class="md-raised md-primary" ng-click="$ctrl.update($ctrl.user)">Save</md-button>
     </md-tab>
 </md-tabs>

@@ -73,6 +73,7 @@ describe('user-details', function () {
             console.log(elm.find('button').eq(0));
             //elm.find('button').eq(0).click();
             elm.find('button').eq(0).triggerHandler('click');
+            $rootScope.$digest();
             //expect(elm.find('input')).toBe();
             //console.log(elm);
         });
