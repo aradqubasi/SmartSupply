@@ -7,16 +7,10 @@ angular.module('smartSupply.view')
     .controller('user-management.controller',['userManager', function (userManager) {
         this.reportName = 'User Management';
         this.users = [];
-        this.selectedUser = {
-            userId: "1",
-            userName: "Barbara Kan",
-            userEmail: "barbara.kan@triumph.com",
-            position: "User",
-            isLocked: true,
-            officePhone: "0000000001"
-        };
+        this.selectedUser = [];
         var scope = this;
         this.selectCall = function (user) {
+            scope.selectedUser = user;
           console.log('hit');
         };
         this.updateUser = function (user) {
@@ -28,7 +22,7 @@ angular.module('smartSupply.view')
         var promiseObj = userManager.getAllUsers();
         promiseObj.then(function (value) {
             scope.users = value;
-            //scope.selectedUser = value[0];
+            scope.selectedUser = value[0];
         });
 
         //var u1 = new User({"userId":"1","userName":"BarbaraKan","userEmail":"barbara.kan@triumph.com","position":"User","isLocked":true,"officePhone":"0000000001"});
