@@ -3,10 +3,8 @@
     <ul ng-repeat=" user in ctrl.users" ng-click="ctrl.selectCall(user)">
         <li>{{user.userName}}</li>
     </ul>
-    <user-list users-list='ctrl.users' on-select='ctrl.selectCall(user)'></user-list>
-    <md-content>
-        <div flex>
-            <user-details user="ctrl.selectedUser" on-create="ctrl.createUser(user)" on-update="ctrl.updateUser(user)"></user-details>
-        </div>
-    </md-content>
+    <div layout="row">
+        <user-list flex="50" users-list='ctrl.users' on-select='ctrl.selectCall(user)'></user-list>
+        <user-details flex="50" user="ctrl.selectedUser" on-create="ctrl.createUser(user)" on-update="ctrl.updateUser(user)"></user-details>
+    </div>
 </div>

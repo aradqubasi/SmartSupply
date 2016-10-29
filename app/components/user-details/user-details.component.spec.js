@@ -58,7 +58,7 @@ describe('user-details', function () {
             $rootScope.userToDisplay = userToDisplay;
             $rootScope.createUser = createUser;
             $rootScope.updateUser = updateUser;
-            elm = angular.element('<div><user-details user="userToDisplay" on-create="createUser" on-update="updateUser"></user-details></div>');
+            elm = angular.element('<div><user-details user="userToDisplay" on-create="createUser(user)" on-update="updateUser(user)"></user-details></div>');
             $compile(elm)($rootScope);
             $rootScope.$digest();
             //var bindings = {user: userToDisplay, onCreate: createUser(), onUpdate: updateUser};
@@ -73,7 +73,7 @@ describe('user-details', function () {
             console.log(elm.find('button').eq(0));
             //elm.find('button').eq(0).click();
             elm.find('button').eq(0).triggerHandler('click');
-            $rootScope.$digest();
+
             //expect(elm.find('input')).toBe();
             //console.log(elm);
         });

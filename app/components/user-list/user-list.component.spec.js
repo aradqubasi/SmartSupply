@@ -108,7 +108,7 @@ describe('user-list', function () {
 
         it('should show the list of users', function () {
             //console.log(elm);
-            var usersRecords = elm.find('li');
+            var usersRecords = elm.find('md-list-item');
             //console.log(elm.html());
             //console.log(usersRecords);
             expect(usersRecords).toBeDefined();
