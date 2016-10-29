@@ -1,7 +1,7 @@
 <div>
     <span>User list:</span>
     <ul>
-        <li ng-repeat="user in $ctrl.usersList" ng-click="$ctrl.onSelect(user)">
+        <li ng-repeat="user in $ctrl.usersList" ng-click="$ctrl.onSelect({user: user})">
             <span>{{ user.userName }}</span>
             <span>{{ user.userEmail }}</span>
             <span>{{ user.position }}</span>
