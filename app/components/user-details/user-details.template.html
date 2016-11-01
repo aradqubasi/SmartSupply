@@ -1,0 +1,39 @@
+<md-tabs md-dynamic-height md-border-bottom>
+    <md-tab label="PROFILE" layout="column">
+        <md-input-container class="md-block">
+            <label>Name</label>
+            <input ng-model="$ctrl.user.userName">
+        </md-input-container>
+        <md-input-container class="md-block">
+            <label>Email (Login)</label>
+            <input ng-model="$ctrl.user.userEmail">
+        </md-input-container>
+        <md-input-container class="md-block">
+            <label>Position</label>
+            <input ng-model="$ctrl.user.position">
+        </md-input-container>
+        <md-input-container class="md-block">
+            <label>Office phone</label>
+            <input ng-model="$ctrl.user.officePhone">
+        </md-input-container>
+        <md-button class="md-raised md-primary" ng-click="$ctrl.update($ctrl.user)">Save</md-button>
+    </md-tab>
+    <md-tab label="PASSWORD">
+        <md-input-container class="md-block">
+            <label>Old password</label>
+            <input ng-model="$ctrl.oldPassword">
+        </md-input-container>
+        <md-input-container class="md-block">
+            <label>New password</label>
+            <input ng-model="$ctrl.newPassword">
+        </md-input-container>
+        <md-input-container >
+            <label>Confirm new password</label>
+            <input ng-model="$ctrl.newPasswordConfirmed">
+        </md-input-container>
+        <md-button class="md-raised md-primary" ng-click="$ctrl.update($ctrl.user)">Change</md-button>
+    </md-tab>
+    <md-tab label="PERMITION">
+        <md-button class="md-raised md-primary" ng-click="$ctrl.update($ctrl.user)">Save</md-button>
+    </md-tab>
+</md-tabs>

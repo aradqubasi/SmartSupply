@@ -3,7 +3,7 @@
  */
 'use strict';
 angular.module('smartSupply.userList')
-    .component('user-list',{
+    .component('userList',{
         templateUrl: 'components/user-list/user-list.template.html',
         bindings: {
             usersList: '<',
