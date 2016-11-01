@@ -3,7 +3,7 @@
  */
 'use strict';
 describe('user-list', function () {
-    beforeEach(module('smartSupply.userList'));
+    beforeEach(module('smartSupply.userList', 'ngAria', 'ngAnimate', 'ngMaterial'));
     describe('user-list.component', function () {
         var users = [
             {
