@@ -67,10 +67,10 @@ describe('user-details', function () {
 
         it('first tab was displayed', function () {
             //console.log(elm);
-            console.log(elm.find('input').eq(0));
+            //console.log(elm.find('input').eq(0));
             //elm.find('input').eq(0).val('New name').triggerHandler('input');
             //elm.find('md-button');
-            console.log(elm.find('button').eq(0));
+//            console.log(elm.find('button').eq(0));
             //elm.find('button').eq(0).click();
             elm.find('button').eq(0).triggerHandler('click');
 
