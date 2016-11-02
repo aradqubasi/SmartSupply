@@ -40,17 +40,19 @@ describe('reportsBar testing', function () {
         }));
 
 
-        it('have reports in list', function () {
+        it('have correct report names in the list', function () {
             //console.log(elm);
             var repLines = elm.find('span');
-            var parsedRepLines = [];
+            //var parsedRepLines = [];
             //console.log(repLines);
             expect(repLines.length).toBe(reportsList.length);
             for (var i = 0; i < repLines.length; i++)
             {
-                parsedRepLines.push({ reportName: elm.find('span').eq[0]});
+                expect(repLines.eq(i).html()).toEqual(reportsList[i].reportName);
+                //parsedRepLines.push({ reportName: elm.find('span').eq(i).html()});
             }
-            console.log(parsedRepLines);
+
+            //console.log(parsedRepLines);
         });
     });
 });
