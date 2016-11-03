@@ -42,7 +42,8 @@ describe('reportsBar testing', function () {
 
         it('have correct report names in the list', function () {
             //console.log(elm);
-            var repLines = elm.find('span');
+            //var repLines = elm.find('span');
+            var repLines = elm.find('md-sidenav').find('span');
             //var parsedRepLines = [];
             //console.log(repLines);
             expect(repLines.length).toBe(reportsList.length);
@@ -51,7 +52,6 @@ describe('reportsBar testing', function () {
                 expect(repLines.eq(i).html()).toEqual(reportsList[i].reportName);
                 //parsedRepLines.push({ reportName: elm.find('span').eq(i).html()});
             }
-
             //console.log(parsedRepLines);
         });
     });

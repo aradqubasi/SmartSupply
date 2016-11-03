@@ -4,7 +4,8 @@
 angular.module('smartSupply.routing', [
   'ngRoute',
   'smartSupply.view',
-  'smartSupply.userList'
+  'smartSupply.userList',
+  'smartSupply.reportsBar'
 ]).
 config(['$locationProvider', '$routeProvider', '$mdThemingProvider', function($locationProvider, $routeProvider, $mdThemingProvider) {
   $locationProvider.hashPrefix('!');

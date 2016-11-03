@@ -1,7 +1,14 @@
-<md-sidenav>
-    <md-list>
+<div layout="row">
+    <md-list ng-mouseenter="$ctrl.openSideNav()">
         <md-list-item ng-repeat="report in $ctrl.reports">
             <span>{{report.reportName}}</span>
         </md-list-item>
     </md-list>
-</md-sidenav>
+    <md-sidenav ng-mouseleave="$ctrl.closeSideNav()" md-component-id="left">
+        <md-list>
+            <md-list-item ng-repeat="report in $ctrl.reports" >
+                <span>{{report.reportName}}</span>
+            </md-list-item>
+        </md-list>
+    </md-sidenav>
+</div>
