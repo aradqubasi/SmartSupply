@@ -6,8 +6,8 @@
     </md-list>
     <md-sidenav ng-mouseleave="$ctrl.closeSideNav()" md-component-id="left">
         <md-list>
-            <md-list-item ng-repeat="report in $ctrl.reports" >
-                <span>{{report.reportName}}</span>
+            <md-list-item ng-repeat="report in $ctrl.reports">
+                <a href="#!{{report.reportLinkName}}">{{report.reportName}}</a>
             </md-list-item>
         </md-list>
     </md-sidenav>

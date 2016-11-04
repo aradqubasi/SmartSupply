@@ -15,6 +15,7 @@ module.exports = function(config) {
       '*.module.js',
       'components/**/*.module.js',
       'components/**/*.component.js',
+      'components/**/*.filter.js',
       'view*/**/*.module.js',
       'view*/**/*.controller.js',
       'components/**/*template.html',
