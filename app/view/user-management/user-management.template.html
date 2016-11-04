@@ -4,7 +4,7 @@
         <li>{{user.userName}}</li>
     </ul>
     <div layout="row">
-        <user-list flex="50" users-list='ctrl.users' on-select='ctrl.selectCall(user)'></user-list>
-        <user-details flex="50" user="ctrl.selectedUser" on-create="ctrl.createUser(user)" on-update="ctrl.updateUser(user)"></user-details>
+        <user-list flex="40" users-list='ctrl.users' on-select='ctrl.selectCall(user)'></user-list>
+        <user-details flex="40" user="ctrl.selectedUser" on-create="ctrl.createUser(user)" on-update="ctrl.updateUser(user)"></user-details>
     </div>
 </div>

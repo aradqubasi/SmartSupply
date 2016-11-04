@@ -12,8 +12,10 @@
     <li><a href="#!/system-status">system status</a></li>
     <li><a href="#!/user-management">user management</a></li>
   </ul>
-  <reports-bar reports="[{reportName : 'report1'}]"></reports-bar>
-  <div ng-view></div>
+  <div layout="row">
+    <reports-bar reports="[{reportName : 'report1'}, {reportName : 'report1'}, {reportName : 'report1'}]"></reports-bar>
+    <div ng-view></div>
+  </div>
 
 
   <script src="bower_components/angular/angular.js"></script>
@@ -36,7 +38,7 @@
   <script src="components/user-details/user-detals.module.js"></script>
   <script src="components/user-details/user-details.component.js"></script>
 
-  <script src="components/reports-bar/reports-bar.component.js"></script>
   <script src="components/reports-bar/reports-bar.module.js"></script>
+  <script src="components/reports-bar/reports-bar.component.js"></script>
 </body>
 </html>

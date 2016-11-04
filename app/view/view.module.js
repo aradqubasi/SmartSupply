@@ -9,5 +9,6 @@ angular.module('smartSupply.view',[
     'smartSupply.model',
     'smartSupply.routing',
     'smartSupply.userList',
-    'smartSupply.userDetails'
+    'smartSupply.userDetails',
+    'smartSupply.reportsBar'
 ]);
