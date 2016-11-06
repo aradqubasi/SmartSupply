@@ -1,35 +1,46 @@
 <md-tabs md-dynamic-height md-border-bottom>
-    <md-tab label="PROFILE" layout="column">
-        <md-input-container class="md-block">
-            <label>Name</label>
-            <input ng-model="$ctrl.user.userName">
-        </md-input-container>
-        <md-input-container class="md-block">
-            <label>Email (Login)</label>
-            <input ng-model="$ctrl.user.userEmail">
-        </md-input-container>
-        <md-input-container class="md-block">
-            <label>Position</label>
-            <input ng-model="$ctrl.user.position">
-        </md-input-container>
-        <md-input-container class="md-block">
-            <label>Office phone</label>
-            <input ng-model="$ctrl.user.officePhone">
-        </md-input-container>
-        <md-button class="md-raised md-primary" ng-click="$ctrl.update($ctrl.user)">Save</md-button>
-    </md-tab>
+    <form name="profile">
+        <md-tab label="PROFILE" layout="column">
+            <md-input-container class="md-block">
+                <label>Name</label>
+                <input required ng-pattern="/^([A-Z]|[a-z]|[ ])+$/" maxlength="100" name="name" ng-model="$ctrl.user.userName">
+                <div layout="column" ng-message="profile.name.$error">
+                    <div ng-message-exp="['required', 'minlength', 'maxlength', 'pattern']">
+                        Your email must be between 10 and 100 characters long and look like an e-mail address.
+                    </div>
+                    <span type="error" ng-message="required">Required</span>
+                    <span type="error" ng-message="profile.name.$error.pattern">Only text expected</span>
+                    <span type="error" ng-message="profile.name.$error.minlength">Too short</span>
+                    <span type="error" ng-message="profile.name.$error.maxlength">Too long</span>
+                </div>
+            </md-input-container>
+            <md-input-container class="md-block">
+                <label>Email (Login)</label>
+                <input required type="email" ng-pattern="/^.+@.+\..+$/" ng-minlength="10" ng-maxlength="100" name="email" ng-model="$ctrl.user.userEmail">
+            </md-input-container>
+            <md-input-container class="md-block">
+                <label>Position</label>
+                <input required ng-pattern="/^([A-Z]|[a-z]|[ ])+$/" ng-minlength="10" ng-maxlength="100" name="position" ng-model="$ctrl.user.position">
+            </md-input-container>
+            <md-input-container class="md-block">
+                <label>Office phone</label>
+                <input pattern="/^(\(|\)|\+|\d|\-)+$/" ng-minlength="10" ng-maxlength="20" name="officePhone" ng-model="$ctrl.user.officePhone">
+            </md-input-container>
+            <md-button class="md-raised md-primary" ng-click="$ctrl.update($ctrl.user)">Save</md-button>
+        </md-tab>
+    </form>
     <md-tab label="PASSWORD">
         <md-input-container class="md-block">
             <label>Old password</label>
-            <input ng-model="$ctrl.oldPassword">
+            <input type="password" ng-model="$ctrl.oldPassword">
         </md-input-container>
         <md-input-container class="md-block">
             <label>New password</label>
-            <input ng-model="$ctrl.newPassword">
+            <input type="password" ng-model="$ctrl.newPassword">
         </md-input-container>
         <md-input-container >
             <label>Confirm new password</label>
-            <input ng-model="$ctrl.newPasswordConfirmed">
+            <input type="password" ng-model="$ctrl.newPasswordConfirmed">
         </md-input-container>
         <md-button class="md-raised md-primary" ng-click="$ctrl.update($ctrl.user)">Change</md-button>
     </md-tab>
