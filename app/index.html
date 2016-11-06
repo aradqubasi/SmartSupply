@@ -7,16 +7,9 @@
   <link rel="stylesheet" href="bower_components/angular-material/angular-material.css">
 </head>
 <body ng-app="smartSupply.routing">
-<!--
-  <ul>
-    <li><a href="#!/login">login</a></li>
-    <li><a href="#!/system-status">system status</a></li>
-    <li><a href="#!/user-management">user management</a></li>
-  </ul>
-  -->
   <div layout="row">
-    <reports-bar reports="[{reportName : 'login', reportLinkName : 'login'}, {reportName : 'system-status', reportLinkName : 'system-status'}, {reportName : 'user-management', reportLinkName : 'user-management'}]"></reports-bar>
-    <div ng-view></div>
+    <reports-bar flex="10" reports="[{reportName : 'login', reportLinkName : 'login'}, {reportName : 'system-status', reportLinkName : 'system-status'}, {reportName : 'user-management', reportLinkName : 'user-management'}]"></reports-bar>
+    <div flex="90" ng-view></div>
   </div>
 
 
