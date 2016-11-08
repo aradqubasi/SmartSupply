@@ -2,13 +2,10 @@
 angular.module('smartSupply.userDetails')
     .component('userDetails',{
         templateUrl: "components/user-details/user-details.template.html",
-        bindings: {
-            user: "<",
-            onCreate: "&",
-            onUpdate: "&"},
+        bindings: { user: "=", onCreate: "&", onUpdate: "&"},
         controller: [function () {
             var ctrl = this;
-            //ctrl.userForView = user;
+
             ctrl.create = function (user) {
                 ctrl.onCreate({user: ctrl.user});
             };
