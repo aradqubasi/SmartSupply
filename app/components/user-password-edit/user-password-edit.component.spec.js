@@ -3,7 +3,7 @@
  */
 'use strict';
 describe('user-password-edit', function () {
-    var $rootScope, $compile, $componentController, elm, ctrl, bindings, hit;
+    var $rootScope, $compile, $componentController, elm, ctrl, bindings, hit, currentPassword;
 
     beforeEach(module('ngAria', 'ngAnimate', 'ngMaterial', 'smartSupply.userPasswordEdit', 'smartSupply.templates'));
     beforeEach(inject(function(_$rootScope_, _$compile_, _$componentController_){
@@ -45,14 +45,22 @@ describe('user-password-edit', function () {
             hit = {};
             $rootScope.onUpdate = function (oldPassword, newPassword) {
                 hit = true;
+                var success =;
+                if (typeof oldPassword == 'string' && typeof newPassword == 'string')
+                {
+                    if (oldPassword == currentPassword)
+                    {
+                        success = true;
+                    }
+                }
                 return false;
             };
-            elm = angular.element('<user-password-component on-update="onUpdate(oldPassword, newPassword)"></user-password-component>');
-            $compile($rootScope)(elm);
+            elm = angular.element('<div><user-password-edit on-update="onUpdate(oldPassword, newPassword)"></user-password-edit></div>');
+            $compile(elm)($rootScope);
             $rootScope.$digest();
         });
         it('update with right old password', function() {
-
+            //console.log(elm);
         });
         it('update with wrong old password', function () {
 
