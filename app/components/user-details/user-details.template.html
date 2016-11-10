@@ -24,25 +24,13 @@
             </md-input-container>
             <md-input-container class="md-block">
                 <label>Office phone</label>
-                <input pattern="/^(\(|\)|\+|\d|\-)+$/" ng-minlength="10" ng-maxlength="20" name="officePhone" ng-model="$ctrl.user.officePhone">
+                <input pattern="/^(\d+)+$/" ng-minlength="10" ng-maxlength="20" name="officePhone" ng-model="$ctrl.user.officePhone">
             </md-input-container>
             <md-button class="md-raised md-primary" ng-click="$ctrl.update($ctrl.user)">Save</md-button>
         </md-tab>
     </form>
     <md-tab label="PASSWORD">
-        <md-input-container class="md-block">
-            <label>Old password</label>
-            <input type="password" ng-model="$ctrl.oldPassword">
-        </md-input-container>
-        <md-input-container class="md-block">
-            <label>New password</label>
-            <input type="password" ng-model="$ctrl.newPassword">
-        </md-input-container>
-        <md-input-container >
-            <label>Confirm new password</label>
-            <input type="password" ng-model="$ctrl.newPasswordConfirmed">
-        </md-input-container>
-        <md-button class="md-raised md-primary" ng-click="$ctrl.update($ctrl.user)">Change</md-button>
+        <user-password-edit on-update="$ctrl.pwupdate(oldPassword, newPassword)"></user-password-edit>
     </md-tab>
     <md-tab label="PERMITION">
         <md-button class="md-raised md-primary" ng-click="$ctrl.update($ctrl.user)">Save</md-button>

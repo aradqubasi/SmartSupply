@@ -12,5 +12,10 @@ angular.module('smartSupply.userDetails')
             ctrl.update = function (user) {
                 ctrl.onUpdate({user: ctrl.user});
             };
+            ctrl.pwupdate = function (oldPassword, newPassword) {
+                console.log(oldPassword);
+                console.log(newPassword);
+                return true;
+            };
         }]
     });

@@ -13,7 +13,7 @@ angular.module('smartSupply.userPasswordEdit')
         ctrl.newPasswordConfirmed = '';
         ctrl.updateResult = {};
         ctrl.tryPasswordUpdate = function () {
-            ctrl.updateResult = ctrl.onUpdate(ctrl.oldPassword, ctrl.newPassword);
+            ctrl.updateResult = ctrl.onUpdate({oldPassword: ctrl.oldPassword}, {newPassword: ctrl.newPassword});
         };
     }]
 });
