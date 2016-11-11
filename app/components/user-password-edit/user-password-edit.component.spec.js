@@ -63,14 +63,19 @@ describe('user-password-edit', function () {
         });
         it('update with right old password', function() {
             //elm.find('input').val(['666', '777', '888']);
+            //elm.find('h1').find('input').val('666');
             elm.find('input').eq(0).val('666');
             elm.find('input').eq(0).triggerHandler('input');
             elm.find('input').eq(1).val('777');
             elm.find('input').eq(1).triggerHandler('input');
+            //elm.find('h1').find('input').triggerHandler('input');
+            //elm.find('h2').find('input').val('777');
+            //elm.find('input').eq(1).val('777');
+            //elm.find('h2').find('input').triggerHandler('input');
             //elm.find('input').eq(1).triggerHandler('input');
             //$rootScope.$digest();
             //console.log(elm.find('form'));
-            console.log(elm.find('input').eq(1));
+            //console.log(elm.find('input').eq(1));
             //console.log(elm.find('input').eq(0).html());
             //console.log($rootScope.oldPassword);
             //console.log($rootScope.newPassword);
@@ -86,4 +91,53 @@ describe('user-password-edit', function () {
 
         });
     });
+    /*
+    describe('directive2', function () {
+        beforeEach(function () {
+            hit = false;
+            $rootScope.onUpdate = function (oldPassword, newPassword) {
+                hit = true;
+                var success = false;
+                console.log(oldPassword);
+                console.log(newPassword);
+                if (typeof oldPassword == 'string' && typeof newPassword == 'string')
+                {
+                    if (oldPassword == currentPassword)
+                    {
+                        success = true;
+                    }
+                }
+                return success;
+            };
+            elm = angular.element('<div><user-password-edit on-update="onUpdate(oldPassword, newPassword)"></user-password-edit></div>');
+            $compile(elm)($rootScope);
+            $rootScope.$digest();
+        });
+        it('update with right old password', function() {
+            //elm.find('input').val(['666', '777', '888']);
+            elm.find('h1').find('input').val('666');
+            elm.find('h1').find('input').triggerHandler('input');
+            elm.find('h2').find('input').val('777');
+            //elm.find('input').eq(1).val('777');
+            elm.find('h2').find('input').triggerHandler('input');
+            //elm.find('input').eq(1).triggerHandler('input');
+            //$rootScope.$digest();
+            //console.log(elm.find('form'));
+            //console.log(elm.find('input').eq(1));
+            //console.log(elm.find('input').eq(0).html());
+            //console.log($rootScope.oldPassword);
+            //console.log($rootScope.newPassword);
+            //console.log($rootScope.newPasswordConfirmed);
+            //console.log($rootScope.updateResult);
+            $rootScope.$digest();
+            elm.find('button').triggerHandler('click');
+            $rootScope.$digest();
+            //console.log($rootScope.updateResult);
+            expect(hit).toBeTruthy();
+        });
+        it('update with wrong old password', function () {
+
+        });
+    });
+    */
 });
