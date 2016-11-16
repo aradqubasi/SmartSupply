@@ -5,5 +5,6 @@
 angular.module('smartSupply.userPasswordEdit',[
     'ngAria',
     'ngAnimate',
-    'ngMaterial'
+    'ngMaterial',
+    'ngMessages'
 ]);
