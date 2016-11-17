@@ -8,6 +8,7 @@ angular.module('smartSupply.userPasswordEdit')
     bindings: { onUpdate : '&' },
     controller: [function () {
         var ctrl = this;
+        ctrl.debug = false;
         ctrl.oldPassword = '';
         ctrl.newPassword = '';
         ctrl.newPasswordConfirmed = '';
