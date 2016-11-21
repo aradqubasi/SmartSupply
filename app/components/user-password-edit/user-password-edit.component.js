@@ -8,13 +8,17 @@ angular.module('smartSupply.userPasswordEdit')
     bindings: { onUpdate : '&' },
     controller: [function () {
         var ctrl = this;
-        ctrl.debug = false;
+        ctrl.debug = true;
         ctrl.oldPassword = '';
         ctrl.newPassword = '';
         ctrl.newPasswordConfirmed = '';
         ctrl.updateResult = {};
         ctrl.tryPasswordUpdate = function () {
             ctrl.updateResult = ctrl.onUpdate({oldPassword: ctrl.oldPassword, newPassword: ctrl.newPassword});
+        };
+        ctrl.getPasswordMatch = function ()
+        {
+            return {'mismatch' : ctrl.oldPassword == ctrl.newPassword && ctrl.oldPassword != '' && ctrl.newPassword != ''};
         };
     }]
 });
